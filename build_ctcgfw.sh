@@ -18,10 +18,12 @@ src-link telephony ${SCRIPT_ABS_PATH}/feeds/openwrt/telephony
 # basic configuration whatever build SDK, build packages or develepment
 function base_pack_conf {
 BASE_PACK_CONF="
-$(TARGET_X86_64)
+$(TARGET_ipq40xx_generic)
 CONFIG_TESTING_KERNEL=y
 
 $(GENERAL_SETTING)
+
+CONFIG_PACKAGE_kmod-ath10k-ct-smallbuffers=m
 
 CONFIG_PACKAGE_luci-app-ddns=n
 CONFIG_PACKAGE_luci-app-sqm=n
